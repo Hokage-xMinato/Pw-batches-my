@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2c3e50; /* Dark blue-gray heading */
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+
+        .class-list {
+            list-style: none;
+            padding: 0;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .class-item {
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .class-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .class-button {
+            display: block;
+            width: 100%;
+            padding: 18px 25px;
+            text-align: left;
+            border: none;
+            background: none;
+            color: #34495e; /* Darker gray text */
+            font-size: 1.15em;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 8px; /* Match the list item */
+            box-sizing: border-box;
+        }
+
+        .class-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Light blue focus */
+        }
+
+        /* Add a subtle visual cue */
+        .class-button::before {
+            content: "\f0da"; /* Right arrow icon (Font Awesome - you might need to include it) */
+            font-family: 'Font Awesome 5 Free'; /* Adjust if you're using a different icon library */
+            font-weight: 900;
+            margin-right: 15px;
+            color: #3498db; /* Blue accent color */
+        }
+
+        /* If Font Awesome isn't used, a simple arrow */
+        body:not(.fontawesome-loaded) .class-button::before {
+            content: "→";
+            font-size: 1.2em;
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        /* Optional: Add a gradient background to the body */
+        body {
+            background: linear-gradient(135deg, #eceff1, #f0f4c3); /* Light, subtle gradient */
+        }
+    </style>
+    <script>
+        // Store your actual URLs here using descriptive variable names
+        const CLASS_ONE_URL = "YOUR_CLASS_ONE_LINK_HERE";
+        const CLASS_TWO_URL = "YOUR_CLASS_TWO_LINK_HERE";
+        const CLASS_THREE_URL = "YOUR_CLASS_THREE_LINK_HERE";
+        const CLASS_FOUR_URL = "YOUR_CLASS_FOUR_LINK_HERE";
+
+        const classLinks = {
+            'Class 1': CLASS_ONE_URL,
+            'Class 2': CLASS_TWO_URL,
+            'Class 3': CLASS_THREE_URL,
+            'Class 4': CLASS_FOUR_URL,
+            // Add more classes and their URLs here
+        };
+
+        function openLink(className) {
+            if (classLinks.hasOwnProperty(className)) {
+                window.open(classLinks[className], '_blank');
+            } else {
+                console.error('Class not found:', className);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>PHYSICS WALLAH</h1>
+    <ul class="class-list">
+        <li class="class-item"><button class="class-button" onclick="openLink('Class 1')">Class 1</button></li>
+        <li class="class-item"><button class="class-button" onclick="openLink('Class 2')">Class 2</button></li>
+        <li class="class-item"><button class="class-button" onclick="openLink('Class 3')">Class 3</button></li>
+        <li class="class-item"><button class="class-button" onclick="openLink('Class 4')">Class 4</button></li>
+    </ul>
+</body>
+</html>
